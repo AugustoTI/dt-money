@@ -12,6 +12,13 @@ export const GlobalStyles = createGlobalStyle`
     --shape: #ffffff;
   }
 
+  @keyframes modalOpen {
+    to {
+      opacity: 1;
+      transform: initial
+    }
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -51,5 +58,38 @@ export const GlobalStyles = createGlobalStyle`
   [disabled] {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+
+  .react-modal-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+  }
+
+  .react-modal-content {
+    width: 100%;
+    max-width: 576px;
+    background: var(--shape);
+    padding: 3rem;
+    position: relative;
+    border-radius: 0.24rem;
+    transform: scale(0.6);
+    opacity: 0;
+    animation: modalOpen 0.2s forwards;
+  }
+
+  .react-modal-close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    border: 0;
+    background: transparent;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
   }
 `;
