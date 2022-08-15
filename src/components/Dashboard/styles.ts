@@ -2,9 +2,8 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${() => css`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: -7.18rem;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
   `}
 `;
