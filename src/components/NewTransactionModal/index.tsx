@@ -4,6 +4,7 @@ import entradasIMG from '../../assets/entradas.svg';
 import saidasIMG from '../../assets/saidas.svg';
 import Modal from 'react-modal';
 import { FormEventHandler, useState } from 'react';
+import { api } from 'src/services/api';
 
 interface NewTransactionModalProps {
   isOpen: boolean;
@@ -25,12 +26,15 @@ export const NewTransactionModal = ({
     event,
   ) => {
     event.preventDefault();
-    console.log({
+
+    const data = {
       title,
       value,
       category,
       type,
-    });
+    };
+
+    api.post('/transactions', data);
   };
 
   return (
