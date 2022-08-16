@@ -45,6 +45,7 @@ export const Container = styled.form`
       border: 0;
       margin-top: 1.25rem;
       font-weight: 600;
+      font-size: 1rem;
       transition: filter 0.2s;
 
       &:hover {
@@ -59,12 +60,24 @@ export const TransactionTypeContainer = styled.div`
   margin: 1rem 0;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
+`;
 
-  button {
+interface RadioBoxProps {
+  isActive: boolean;
+  activeColor: 'green' | 'red';
+}
+
+const colors = {
+  green: '#ddeeeb',
+  red: '#efdee4',
+};
+
+export const RadioBox = styled.button<RadioBoxProps>`
+  ${({ isActive, activeColor }) => css`
     height: 4rem;
     border: 1px solid #d7d7d7;
     border-radius: 0.25rem;
-    background: transparent;
+    background: ${isActive ? colors[activeColor] : 'transparent'};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,5 +97,5 @@ export const TransactionTypeContainer = styled.div`
       font-size: 1rem;
       color: var(--text-title);
     }
-  }
+  `}
 `;
