@@ -18,8 +18,12 @@ export const TransactionsProvider = ({
       .then(({ data }) => setTransactions(data.transactions));
   }, []);
 
-  const createTransaction = (transaction: TransactionInput) => {
-    api.post('/transactions', transaction);
+  const createTransaction = async (transactionInput: TransactionInput) => {
+    const { data } = await api.post('/transactions', {
+      ...transactionInput,
+      createAt: new Date(),
+    });
+    setTransactions((state) => [...state, data.transaction]);
   };
 
   return (

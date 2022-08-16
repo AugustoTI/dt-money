@@ -23,16 +23,22 @@ export const NewTransactionModal = ({
   const [amount, setAmount] = useState(0);
   const [category, setCategory] = useState('');
 
-  const handleCreateNewTransaction: FormEventHandler<HTMLFormElement> = (
+  const handleCreateNewTransaction: FormEventHandler<HTMLFormElement> = async (
     event,
   ) => {
     event.preventDefault();
-    createTransaction({
+    await createTransaction({
       title,
       amount,
       category,
       type,
     });
+
+    setTitle('');
+    setAmount(0);
+    setCategory('');
+    setType('deposit');
+    onRequestClose();
   };
 
   return (
@@ -58,6 +64,7 @@ export const NewTransactionModal = ({
 
         <input
           type="number"
+          min={0}
           value={amount}
           onChange={({ target }) => setAmount(Number(target.value))}
           placeholder="Valor"
