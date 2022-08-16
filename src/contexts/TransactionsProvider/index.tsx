@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { api } from 'src/services/api';
-import { Transactions } from 'src/types/transaction';
+import { Transaction, TransactionInput } from 'src/types/transaction';
 import { TransactionContext } from './context';
 
 interface TransactionsProviderProps {
@@ -10,7 +10,7 @@ interface TransactionsProviderProps {
 export const TransactionsProvider = ({
   children,
 }: TransactionsProviderProps) => {
-  const [transactions, setTransactions] = useState<Transactions[]>([]);
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   useEffect(() => {
     api
@@ -18,8 +18,12 @@ export const TransactionsProvider = ({
       .then(({ data }) => setTransactions(data.transactions));
   }, []);
 
+  const createTransaction = (transaction: TransactionInput) => {
+    api.post('/transactions', transaction);
+  };
+
   return (
-    <TransactionContext.Provider value={transactions}>
+    <TransactionContext.Provider value={{ transactions, createTransaction }}>
       {children}
     </TransactionContext.Provider>
   );

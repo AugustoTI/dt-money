@@ -1,4 +1,11 @@
 import { createContext } from 'react';
-import { Transactions } from 'src/types/transaction';
+import { Transaction, TransactionInput } from 'src/types/transaction';
 
-export const TransactionContext = createContext<Transactions[]>([]);
+interface TransactionContentProps {
+  transactions: Transaction[];
+  createTransaction: (transaction: TransactionInput) => void;
+}
+
+export const TransactionContext = createContext<TransactionContentProps>(
+  {} as TransactionContentProps,
+);
