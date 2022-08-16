@@ -1,9 +1,9 @@
 export interface Transaction {
   id: number;
   title: string;
-  type: string;
+  type: 'deposit' | 'withdraw';
   category: string;
-  createAt: Date;
+  createAt: string;
   amount: number;
 }
 

@@ -1,5 +1,7 @@
 import { useContext } from 'react';
 import { TransactionContext } from 'src/contexts/TransactionsProvider/context';
+import { formantDate } from 'src/utils/formatDate';
+import { formantPrice } from 'src/utils/formatPrice';
 import * as S from './styles';
 
 export const TransactionTable = () => {
@@ -21,19 +23,9 @@ export const TransactionTable = () => {
             ({ amount, category, createAt, id, title, type }) => (
               <tr key={id}>
                 <td>{title}</td>
-                <td className={type}>
-                  {amount.toLocaleString('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL',
-                  })}
-                </td>
+                <td className={type}>{formantPrice(amount)}</td>
                 <td>{category}</td>
-                <td>
-                  {new Date(createAt).toLocaleString('pt-BR', {
-                    dateStyle: 'short',
-                    timeZone: 'UTC',
-                  })}
-                </td>
+                <td>{formantDate(createAt)}</td>
               </tr>
             ),
           )}
