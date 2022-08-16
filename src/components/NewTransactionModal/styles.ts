@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.form`
+export const FormContainer = styled.form`
   ${() => css`
     h2 {
       color: var(--text-title);
