@@ -1,5 +1,7 @@
 import * as S from './styles';
 import closeIMG from '../../assets/fechar.svg';
+import entradasIMG from '../../assets/entradas.svg';
+import saidasIMG from '../../assets/saidas.svg';
 import Modal from 'react-modal';
 
 interface NewTransactionModalProps {
@@ -27,6 +29,16 @@ export const NewTransactionModal = ({
         <h2>Cadastrar</h2>
         <input type="text" placeholder="Titulo" />
         <input type="number" placeholder="Valor" />
+        <S.TransactionTypeContainer>
+          <button>
+            <img src={entradasIMG} alt="Entradas" />
+            <span>Entradas</span>
+          </button>
+          <button>
+            <img src={saidasIMG} alt="Saídas" />
+            <span>Saídas</span>
+          </button>
+        </S.TransactionTypeContainer>
         <input type="text" placeholder="Categoria" />
         <button type="submit">Cadastrar</button>
       </S.Container>
