@@ -5,8 +5,10 @@ import * as S from './styles';
 export const Dashboard = () => {
   return (
     <S.Container>
-      <Summary />
-      <TransactionTable />
+      <S.Content>
+        <Summary />
+        <TransactionTable />
+      </S.Content>
     </S.Container>
   );
 };

@@ -20,5 +20,11 @@ export const Container = styled.div<CardStyleProps>`
       font-size: 3.2rem;
       font-weight: 500;
     }
+
+    @media (max-width: 900px) {
+      strong {
+        font-size: 2.4rem;
+      }
+    }
   `}
 `;

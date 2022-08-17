@@ -10,7 +10,7 @@ export const Content = styled.div`
   ${() => css`
     max-width: 1120px;
     margin: 0 auto;
-    padding: 3.2rem 1.6rem 16rem;
+    padding: 3.2rem 1.6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
