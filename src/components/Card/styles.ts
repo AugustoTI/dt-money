@@ -4,8 +4,8 @@ import { CardStyleProps } from '.';
 export const Container = styled.div<CardStyleProps>`
   ${({ highlightBackground }) => css`
     background: ${highlightBackground ? 'var(--green)' : 'var(--shape)'};
-    padding: 1.6rem 2rem;
-    border-radius: 0.25rem;
+    padding: 2.5rem 3.2rem;
+    border-radius: 0.4rem;
     color: ${highlightBackground ? '#fff' : 'var(--text-title)'};
 
     header {
@@ -16,10 +16,9 @@ export const Container = styled.div<CardStyleProps>`
 
     strong {
       display: block;
-      margin-top: 1rem;
-      font-size: 2rem;
+      margin-top: 1.6rem;
+      font-size: 3.2rem;
       font-weight: 500;
-      line-height: 3rem;
     }
   `}
 `;

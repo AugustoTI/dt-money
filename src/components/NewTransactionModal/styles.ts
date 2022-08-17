@@ -4,19 +4,19 @@ export const FormContainer = styled.form`
   ${() => css`
     h2 {
       color: var(--text-title);
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
+      font-size: 2.4rem;
+      margin-bottom: 3.2rem;
     }
 
     input {
       display: block;
       width: 100%;
-      padding: 0 1.5rem;
-      height: 4rem;
-      border-radius: 0.25rem;
+      padding: 0 2.4rem;
+      height: 6.4rem;
+      border-radius: 0.4rem;
       background: #e7e9ee;
       border: 1px solid #e7e9ee;
-      font-size: 1rem;
+      font-size: 1.6rem;
       font-weight: 400;
       transition: background 0.2s;
 
@@ -30,22 +30,22 @@ export const FormContainer = styled.form`
       }
 
       & + input {
-        margin-top: 1rem;
+        margin-top: 1.6rem;
       }
     }
 
     button[type='submit'] {
       display: block;
       width: 100%;
-      padding: 0 1.5rem;
-      height: 4rem;
+      padding: 0 2.4rem;
+      height: 6.4rem;
       background-color: var(--green);
       color: #fff;
-      border-radius: 0.25rem;
+      border-radius: 0.4rem;
       border: 0;
-      margin-top: 1.25rem;
+      margin-top: 2rem;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 1.6rem;
       transition: filter 0.2s;
 
       &:hover {
@@ -57,9 +57,9 @@ export const FormContainer = styled.form`
 
 export const TransactionTypeContainer = styled.div`
   display: grid;
-  margin: 1rem 0;
+  margin: 1.6rem 0;
   grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
+  gap: 0.8rem;
 `;
 
 interface RadioBoxProps {
@@ -74,27 +74,27 @@ const colors = {
 
 export const RadioBox = styled.button<RadioBoxProps>`
   ${({ isActive, activeColor }) => css`
-    height: 4rem;
+    height: 6.4rem;
     border: 1px solid #d7d7d7;
-    border-radius: 0.25rem;
+    border-radius: 0.4rem;
     background: ${isActive ? colors[activeColor] : 'transparent'};
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.6rem;
 
     &:hover {
       border-color: #aaa;
     }
 
     img {
-      width: 20px;
-      height: 20px;
+      width: 2rem;
+      height: 2rem;
     }
 
     span {
       display: inline-block;
-      font-size: 1rem;
+      font-size: 1.6rem;
       color: var(--text-title);
     }
   `}

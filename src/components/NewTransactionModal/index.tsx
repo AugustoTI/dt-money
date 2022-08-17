@@ -70,6 +70,13 @@ export const NewTransactionModal = ({
           placeholder="Valor"
         />
 
+        <input
+          type="text"
+          value={category}
+          onChange={({ target }) => setCategory(target.value)}
+          placeholder="Categoria"
+        />
+
         <S.TransactionTypeContainer>
           <S.RadioBox
             isActive={type === 'deposit'}
@@ -90,13 +97,6 @@ export const NewTransactionModal = ({
             <span>Saídas</span>
           </S.RadioBox>
         </S.TransactionTypeContainer>
-
-        <input
-          type="text"
-          value={category}
-          onChange={({ target }) => setCategory(target.value)}
-          placeholder="Categoria"
-        />
 
         <button type="submit">Cadastrar</button>
       </S.FormContainer>

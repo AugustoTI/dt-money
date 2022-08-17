@@ -26,17 +26,11 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    @media (max-width: 1088px) {
-      font-size: 93.75%;
-    }
-
-    @media (max-width: 720px) {
-      font-size: 87.5%;
-    }
+    font-size: 62.5%;
   }
 
-
   body {
+    font-size: 1.6rem;
     background-color: var(--background);
     -webkit-font-smoothing: antialiased;
   }
@@ -65,24 +59,29 @@ export const GlobalStyles = createGlobalStyle`
     inset: 0;
     display: grid;
     place-items: center;
+    padding: 1.6rem;
   }
 
   .react-modal-content {
     width: 100%;
     max-width: 576px;
     background: var(--shape);
-    padding: 3rem;
+    padding: 4.8rem;
     position: relative;
-    border-radius: 0.24rem;
+    border-radius: 0.4rem;
     transform: scale(0.6);
     opacity: 0;
     animation: modalOpen 0.2s forwards;
+
+    @media (max-width: 700px) {
+      padding: 2.4rem;
+    }
   }
 
   .react-modal-close {
     position: absolute;
-    right: 1.5rem;
-    top: 1.5rem;
+    right: 2.4rem;
+    top: 2.4rem;
     border: 0;
     background: transparent;
     transition: filter 0.2s;
