@@ -52,6 +52,20 @@ export const FormContainer = styled.form`
         filter: brightness(0.9);
       }
     }
+
+    @media (max-width: 900px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      button[type='submit'] {
+        height: 5rem;
+      }
+
+      input + input {
+        margin-top: 1.2rem;
+      }
+    }
   `}
 `;
 
@@ -96,6 +110,10 @@ export const RadioBox = styled.button<RadioBoxProps>`
       display: inline-block;
       font-size: 1.6rem;
       color: var(--text-title);
+    }
+
+    @media (max-width: 900px) {
+      gap: 0.8rem;
     }
   `}
 `;

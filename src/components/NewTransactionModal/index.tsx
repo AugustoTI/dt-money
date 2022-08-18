@@ -20,7 +20,7 @@ export const NewTransactionModal = ({
   const { createTransaction } = useContext(TransactionContext);
   const [type, setType] = useState<'deposit' | 'withdraw'>('deposit');
   const [title, setTitle] = useState('');
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
   const [category, setCategory] = useState('');
 
   const handleCreateNewTransaction: FormEventHandler<HTMLFormElement> = async (

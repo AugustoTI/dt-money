@@ -59,7 +59,10 @@ export const GlobalStyles = createGlobalStyle`
     inset: 0;
     display: grid;
     place-items: center;
-    padding: 1.6rem;
+
+    @media (max-width: 580px) {
+      place-items: end center;
+    }
   }
 
   .react-modal-content {
@@ -73,7 +76,7 @@ export const GlobalStyles = createGlobalStyle`
     opacity: 0;
     animation: modalOpen 0.2s forwards;
 
-    @media (max-width: 700px) {
+    @media (max-width: 580px) {
       padding: 2.4rem;
     }
   }
