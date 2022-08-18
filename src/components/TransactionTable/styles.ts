@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${() => css`
     margin-top: 3.2rem;
+    overflow: auto;
+    max-height: 30rem;
 
     table {
       width: 100%;
@@ -32,6 +34,17 @@ export const Container = styled.div`
 
         &.withdraw {
           color: var(--red);
+        }
+      }
+
+      @media (max-width: 820px) {
+        padding-bottom: 1rem;
+        min-width: max-content;
+
+        th,
+        td {
+          padding: 1.4rem 2.4rem;
+          font-size: 1.4rem;
         }
       }
     }
